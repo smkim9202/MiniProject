@@ -1,0 +1,75 @@
+/*
+DropDownExample - LYS강사님
+*/
+/* 태그 기본 설정 - 메뉴바 맨 좌측에 고정, 기본 설정 값 없애기 */
+body, ul{
+	margin:0; /* 밖의 여백 */
+	padding:0; /* 안쪽 여백 */
+}
+ul {list-style:none;} /* 목록태그 기본스타일값 없애기*/
+a	{text-decoration:none;} /* 링크태그 기본글꼴값 없애기*/
+
+/* 드롭다운 메뉴바*/
+/* 1레벨 메뉴 */
+.dropdownmenu > li{
+	float:left; /* 왼쪽부터 정렬 */
+	position:relative;
+	background:#67b0d1; /* 메뉴바 배경색 설정. */
+	width:20%; /* 1레벨 메뉴의 li를 각각 20%로 화면배치 한다. */
+}
+/* 1레벨 메뉴 - 텍스트 속성, 색, 정렬 */
+.dropdownmenu > li > a{
+	display:block; /* 무조건 한 줄은 점유하고 다음줄로 개행 */
+	font-size:17px; /* 메뉴바 글씨크기 설정 */
+	color:#ffffff; /* 글자색 설정 */
+	text-align:center; /* 글자 가운데로 정렬 */
+	height:60px; /* 메뉴바 높이 */
+	line-height:60px; /* 텍스트 행 사이의 간격에 사용*/
+}
+/* 1레벨 메뉴 - 마우스 올렸을때 배경색 바뀜*/
+.dropdownmenu > li:hover{
+	background:#7bbbd7; 
+}
+/* 1레벨 메뉴 - 마우스 올렸을때 하위메뉴 위치 지정*/
+.dropdownmenu > li:hover > ul{
+	top:60px;
+	left:0;
+}
+
+/* 2레벨 메뉴 */
+.dropdownmenu ul {
+	position:absolute; /* 원래 위치와 상관없이 가장 가까운 상위 요소를 기준으로 위치가 결정 된다.*/
+	top:-9999px; /* 위쪽으로 완전히 감추기 */
+	z-index:9999; /* 하위메뉴는 무조건 앞에 배치 */
+	width:80%; /* 1단 메뉴바 20% 기준에서 80% */
+	border:1px solid #cccccc;
+}
+
+/* 2레벨 메뉴 - 위치 속성 지정*/
+.dropdownmenu ul li {/* 모든 하위속성의 메뉴들 */
+	position:relative;
+}
+
+/* 2레벨 메뉴 - 텍스트 속성, 배경색, 여백 */
+.dropdownmenu ul a{
+	display:block;
+	color:#aaaaaa;
+	font-size:12px;
+	line-height:40px;
+	background:#ffffff;
+	padding-left:20px;
+}
+
+/* 2레벨 메뉴 - 마우스 올렸을 때 배경색 지정 */
+.dropdownmenu ul a:hover {
+	color:#ffffff; 
+	background:#67b0d1;
+}
+
+/* 2레벨 메뉴 - 마우스 올렸을 때 하위메뉴 위치 지정*/
+.dropdownmenu ul li:hover > ul{
+	position:absolute;
+	top:0;
+	left:100%;
+}
+
