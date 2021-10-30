@@ -2,4 +2,4 @@
 
 웹프로그래밍 - frontend, backend
 
-HTML, CSS
+HTML, CSS, JS
